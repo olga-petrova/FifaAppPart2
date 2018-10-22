@@ -1,4 +1,4 @@
-# FifaApp application
+# FifaApp application. Part 2
 
 To run the application:
 
