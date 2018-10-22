@@ -3,11 +3,12 @@
 To run the application:
 
 1. Clone the repo
-
 2. Run
-
-  $ npm install 
-  
-3. Run 
-
-  $ npm run all
+```console
+    $ npm install
+```
+3. Run
+```console
+    $ npm run all
+```
+    
