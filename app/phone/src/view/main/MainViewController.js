@@ -3,7 +3,7 @@ Ext.define('FifaApp.view.main.MainViewController', {
 	alias: 'controller.mainviewcontroller',
 
 	init: function (view) {
-		this.redirectTo( 'personnelview', true );
+		this.redirectTo( 'matchesview', true );
 	},
 
 	onMenuClick: function(button) {
@@ -27,6 +27,18 @@ Ext.define('FifaApp.view.main.MainViewController', {
 			centerview.add({ xtype: xtype });
 		}
 		centerview.setActiveItem(xtype);
+	},
+
+	onFlagsLoad: function () {
+		this.getViewModel().getStore('matchesstore').load();
+	},
+
+	onMatchesLoad: function (store) {
+		var flatMatchesStore = this.getViewModel().getStore('flatmatchesstore'),
+			aggregatedMatchesStore = this.getViewModel().getStore('aggregatedmatchesstore');
+		flatMatchesStore.loadFromOriginal(store.data);
+		aggregatedMatchesStore.loadFromFlat(flatMatchesStore.data);
 	}
+
 
 });

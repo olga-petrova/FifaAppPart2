@@ -19,9 +19,9 @@ Ext.define('FifaApp.view.main.MenuView', {
 			},
 			items: [
 				{ xtype: 'container', html: '&nbsp;', height: 20,},
-				{ text: 'Matches', tag: 'personnelview'},
-				{ text: 'Analysis', tag: 'personnelview'},
-				{ text: 'Visualization', tag: 'personnelview'}
+				{ text: 'Matches', tag: 'matchesview'},
+				{ text: 'Analysis', tag: 'analysisview'},
+				{ text: 'Visualization', tag: 'visualizationview'}
 			]
 		}
 	]

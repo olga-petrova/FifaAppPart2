@@ -6,7 +6,10 @@
   "template": "universalmodern",
   "indexHtmlPath": "index.html",
   "requires": [ 
-    "font-awesome"
+		"font-awesome",
+		"pivot",
+		"exporter",
+		"charts"
   ],
 
   "builds": {

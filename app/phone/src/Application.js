@@ -11,7 +11,7 @@ Ext.define('FifaApp.Application', {
 		'Ext.layout.Center'
 	],
 	defaultToken: 'personnelview',
-
+	
 	launch: function () {
 		Ext.getBody().removeCls('launching');
 		var elem = document.getElementById("splash");

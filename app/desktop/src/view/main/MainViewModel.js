@@ -31,14 +31,29 @@ Ext.define('FifaApp.view.main.MainViewModel', {
 				"expanded": true,
 				"children": [
 					{ "text": "Matches", "iconCls": "x-fa fa-table", "xtype": "matchesview","leaf": true },
-					{ "text": "Analysis", "iconCls": "x-fa fa-table", "xtype": "matchesview","leaf": true },
-					{ "text": "Visualization", "iconCls": "x-fa fa-table", "xtype": "matchesview","leaf": true }
+					{ "text": "Analysis", "iconCls": "x-fa fa-table", "xtype": "analysisview","leaf": true },
+					{ "text": "Visualization", "iconCls": "x-fa fa-table", "xtype": "visualizationview","leaf": true }
 
 				]
 			}
 		},
 		matchesstore: {
-			"type": "matches"
+			"type": "matches",
+			listeners: {
+				load: 'onMatchesLoad'
+			}
+		},
+		flagsstore: {
+			"type": "flags",
+			listeners: {
+				load: 'onFlagsLoad'
+			}
+		},
+		flatmatchesstore: {
+			"type": "flat_matches"
+		},
+		aggregatedmatchesstore: {
+			"type": "aggregated_matches"
 		}
 	}
 });

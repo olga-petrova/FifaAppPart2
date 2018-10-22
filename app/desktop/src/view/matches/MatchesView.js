@@ -11,6 +11,15 @@ Ext.define('FifaApp.view.matches.MatchesView',{
 	listeners: {
 		select: 'onItemSelected'
 	},
+	itemConfig: {
+		viewModel: true,
+		bind: {
+			cls: '{record.stage:lowercase}'
+		}
+	},
+	rowNumbers: {
+		text: 'Index'
+	},
 	columns: [
 		{ 
 			text: 'Year',
@@ -19,14 +28,32 @@ Ext.define('FifaApp.view.matches.MatchesView',{
 			cell: {userCls: 'bold'}
 		},
 		{
-			text: 'Team 1',
-			dataIndex: 'home_team_name',
-			width: 230
+			text: 'Stage',
+			dataIndex: 'stage',
+			width: 100
 		},
 		{
-			text: 'Team 2',
-			dataIndex: 'away_team_name',
-			width: 230
+			text: 'Team A',
+			width: 180,
+			cell: {
+				encodeHtml: false,
+				bind: '<div><div class="flag"><img src="resources/shared/images/flags/{record.home_team_code}.png"></div> <span class="team_label">{record.home_team_name}</span></div>'
+			}
 		},
+		{
+			text: 'Score',
+			width: 60,
+			cell: {
+				bind: '{record.home_team_goals} : {record.away_team_goals} {record.win_conditions}'
+			}
+		},
+		{
+			text: 'Team B',
+			width: 230,
+			cell: {
+				encodeHtml: false,
+				bind: '<div><div class="flag"><img src="resources/shared/images/flags/{record.away_team_code}.png"></div> <span class="team_label">{record.away_team_name}</span></div>'
+			} 
+		}
 	]
 });

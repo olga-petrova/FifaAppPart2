@@ -1,1 +1,24 @@
-.personnelview {}
+.flag {
+	width: 55px;
+	display: inline-block; 
+}
+
+.flag img{
+	height: 30px;
+	vertical-align: middle;
+}
+
+
+.team_label {
+	display: inline-block; 
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.final {
+	background-color: lightgray;
+}

@@ -61,6 +61,16 @@ Ext.define('FifaApp.view.main.MainViewController', {
 		Ext.Viewport.add([{ xtype: 'loginview'}]);
 	},
 
+	onFlagsLoad: function () {
+		this.getViewModel().getStore('matchesstore').load();
+	},
+
+	onMatchesLoad: function (store) {
+		var flatMatchesStore = this.getViewModel().getStore('flatmatchesstore'),
+			aggregatedMatchesStore = this.getViewModel().getStore('aggregatedmatchesstore');
+		flatMatchesStore.loadFromOriginal(store.data);
+		aggregatedMatchesStore.loadFromFlat(flatMatchesStore.data);
+	}
 
 //	onActionsViewLogoutTap: function( ) {
 //		var vm = this.getViewModel();
